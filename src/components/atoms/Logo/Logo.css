@@ -1,0 +1,13 @@
+.logo {
+    font-size: 2rem;
+    background-color: var(--color-black);
+    color: var(--color-primary-green);
+    text-align: center;
+    padding: 20px;
+}
+
+.logo span {
+    color: var(--color-light-green);
+    font-weight: bolder;
+    font-size: 1.05em;
+}

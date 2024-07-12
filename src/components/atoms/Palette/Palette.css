@@ -1,0 +1,32 @@
+.colorBlack {
+    background-color: var(--color-black);
+    padding: 10px;
+}
+.colorDarkGray {
+    background-color: var(--color-dark-gray);
+    padding: 10px;
+}
+.colorMediumGray {
+    background-color: var(--color-medium-gray);
+    padding: 10px;
+}
+.colorLightGray {
+    background-color: var(--color-light-gray);
+    padding: 10px;
+}
+.colorPrimaryGreen {
+    background-color: var(--color-primary-green);
+    padding: 10px;
+}
+.colorDarkGreen {
+    background-color: var(--color-light-green);
+    padding: 10px;
+}
+.colorPastelGreen {
+    background-color: var(--color-pastel-green);
+    padding: 10px;
+}
+.colorWhite {
+    background-color: var(--color-white);
+    padding: 10px;
+}
