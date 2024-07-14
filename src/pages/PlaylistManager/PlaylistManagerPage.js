@@ -8,6 +8,15 @@ function PlaylistManagerPage({ auth }) {
 
     const [ searchTerm, setSearchTerm ] = useState('');
     const [ searchResults, setSearchResults] = useState([]);
+    const [ playlistItems, setPlaylistItems ] =useState([{id: '123', imgUrl: 'https://i.scdn.co/image/ab67616d0000485140cbf5330f808105d7ba9a44', title: 'Mock title', artist: 'Mock artist'}]);
+
+    const addToPlaylist = (thisTrack) => {
+      setPlaylistItems((prev) => [ ...prev, thisTrack]);
+    }
+
+    const removeFromPlaylist = (index) => {
+      setPlaylistItems((prev) => prev.filter((item, thisIndex) => thisIndex !== index));
+    }
 
     useEffect(() => {
         const awaitResults = async() => {
@@ -27,10 +36,10 @@ function PlaylistManagerPage({ auth }) {
             <p>Termo: {searchTerm}</p>
             <div className="container">
                 <div className="playlist">
-                    <SearchResults searchResults={ searchResults } />
+                    <SearchResults searchResults={ searchResults } addToPlaylist={addToPlaylist} />
                 </div>
                 <div className="tracklist">
-                    <Playlist />
+                    <Playlist playlistItems={playlistItems} removeFromPlaylist={ removeFromPlaylist }/>
                 </div>
             </div>
         </MainTemplate>

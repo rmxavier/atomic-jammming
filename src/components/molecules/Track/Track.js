@@ -1,15 +1,27 @@
-import React from "react";
+import React, { act } from "react";
 import './Track.css'
 
-function Track({ key, row, item}) {
-    return (
-      <div key={key} className={`${row === 'even' ? 'track--even' : 'track--odd'} track`}>
-        <img className="trackImage" src={item.album.images[2].url} />
-        <div className="artistName">{item.artists[0].name}</div>
-        <div className="trackName">{item.name}</div>
-        <div className="action">+</div>
-      </div>
-    );
+function Track({ key, index, row, track, addToPlaylist, removeFromPlaylist }) {
+  const rowModifier = row === 'even' ? 'track--even' : 'track--odd';
+  const actionText = addToPlaylist ? 'Add' : 'Remove';
+  const actionButtonModifier = addToPlaylist ? 'actionButton--add' : 'actionButton--remove'
+
+  const handleClick = ()=> {
+    if (addToPlaylist) {
+      addToPlaylist(track);
+    } else {
+      removeFromPlaylist(index)
+    }
+  }
+
+  return (
+    <div key={key} className={`track ${rowModifier}`}>
+      <img className="trackImage" src={track.imgUrl} alt="" />
+      <div className="artistName">{track.artist}</div>
+      <div className="trackName">{track.title}</div>
+      <div className="action"><button onClick={handleClick} className={ 'actionButton  '+ actionButtonModifier }>{ actionText }</button></div>
+    </div>
+  );
 }
 
 export default Track;

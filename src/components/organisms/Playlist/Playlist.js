@@ -1,25 +1,22 @@
 import React from "react";
 import './Playlist.css';
+import { Track } from "../../molecules";
 
-function Playlist() {
+function Playlist({ playlistItems, removeFromPlaylist }) {
   return (
     <>
-      <div className="playlistItemEven playlistItem">
-        <p>Linha 1</p>
-        <p>Linha2</p>
-      </div>
-      <div className="playlistItemOdd playlistItem">
-        <p>Linha 1</p>
-        <p>Linha2</p>
-      </div>
-      <div className="playlistItemEven playlistItem">
-        <p>Linha 1</p>
-        <p>Linha2</p>
-      </div>
-      <div className="playlistItemOdd playlistItem">
-        <p>Linha 1</p>
-        <p>Linha2</p>
-      </div>
+      {
+        playlistItems.map((item, index) => {
+          return (
+            <Track 
+              key={ index } 
+              index={ index }
+              row={ index % 2 === 0 ? 'even' : 'odd'} 
+              track={ item } 
+              removeFromPlaylist={removeFromPlaylist} />
+          );
+        })
+      }
     </>
   );
 }
