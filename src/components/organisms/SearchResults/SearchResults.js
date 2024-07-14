@@ -21,11 +21,11 @@ function SearchResults({ searchResults, addToPlaylist }) {
 
           return (
             <Track 
-            key={ index } 
-            index={ index }
-            row={ index % 2 === 0 ? 'even' : 'odd'} 
-            track={ track } 
-            addToPlaylist={addToPlaylist} />);
+              key={ index } 
+              index={ index }
+              row={ index % 2 === 0 ? 'even' : 'odd'} 
+              track={ track } 
+              addToPlaylist={addToPlaylist} />);
         })
       }
     </>

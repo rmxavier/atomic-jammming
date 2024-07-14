@@ -8,12 +8,22 @@
 .search {
     padding: 1rem;
     background-color: var(--color-light-green);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .playlist {
 }
 
 .tracklist {
+}
+
+.sectionTitle {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: 20px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {

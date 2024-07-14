@@ -33,13 +33,14 @@ function PlaylistManagerPage({ auth }) {
             <div className="search">
                 <SearchBar setSearchTerm={ setSearchTerm } />
             </div>
-            <p>Termo: {searchTerm}</p>
             <div className="container">
                 <div className="playlist">
-                    <SearchResults searchResults={ searchResults } addToPlaylist={addToPlaylist} />
+                  <div className="sectionTitle">Results for: '{searchTerm}'</div>
+                  <SearchResults searchResults={ searchResults } addToPlaylist={addToPlaylist} />
                 </div>
                 <div className="tracklist">
-                    <Playlist playlistItems={playlistItems} removeFromPlaylist={ removeFromPlaylist }/>
+                  <div className="sectionTitle">Playlist 'Mock playlist title'</div>
+                  <Playlist playlistItems={playlistItems} removeFromPlaylist={ removeFromPlaylist }/>
                 </div>
             </div>
         </MainTemplate>

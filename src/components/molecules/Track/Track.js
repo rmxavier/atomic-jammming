@@ -16,9 +16,11 @@ function Track({ key, index, row, track, addToPlaylist, removeFromPlaylist }) {
 
   return (
     <div key={key} className={`track ${rowModifier}`}>
-      <img className="trackImage" src={track.imgUrl} alt="" />
-      <div className="artistName">{track.artist}</div>
-      <div className="trackName">{track.title}</div>
+      <div className="trackImage"><img src={track.imgUrl} alt="" /></div>
+      <div className="trackContent">
+        <div className="trackName">{track.title}</div>
+        <div className="artistName">{track.artist}</div>
+      </div>
       <div className="action"><button onClick={handleClick} className={ 'actionButton  '+ actionButtonModifier }>{ actionText }</button></div>
     </div>
   );
