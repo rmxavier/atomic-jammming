@@ -1,15 +1,17 @@
-import React from "react";
-import styles from './SearchResults.module.css'
+import React, { useEffect } from "react";
+import { Track } from "../../molecules";
 
 function SearchResults({ searchResults }) {
+
+  useEffect(() => {
+    console.log(searchResults);
+  });
+
   return (
     <>
       {
         searchResults.map((result, index) => (
-          <div key={index} className={`${index % 2 === 0 ? styles.playlistItemEven : styles.playlistItemOdd} ${styles.playlistItem}`}>
-            <p>{result.artists[0].name}</p>
-            <p>{result.name}</p>
-          </div>
+          <Track key={ index } row={ index % 2 === 0 ? 'even' : 'odd'} item={ result } />
         ))
       }
     </>

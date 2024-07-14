@@ -16,18 +16,16 @@ function LoginPage({auth, setAuth}) {
 
     const timeoutId = window.setTimeout(() => {
       setAuth((prev) => ({
-        token: 'vai toma no cu',
+        token: '',
         expiresIn: '',
         isAuthenticated: false
       }));
     }, newAuth.expiresIn * 1000);
-
-
   }, []);
 
   return(
     <LoggedOutTemplate>
-      <NavLink to="/playlist-manager">Ir para a playlist</NavLink>
+      { auth.isAuthenticated ? <Navigate to="/playlist-manager" /> : <></> }
     </LoggedOutTemplate>
   );
 }

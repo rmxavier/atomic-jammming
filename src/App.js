@@ -12,20 +12,19 @@ function App() {
     isAuthenticated: false
   })
 
-  useEffect(()=> { console.log(`Auth: ${auth.token}`)});
-
   // Routes
   return (
-    <><Router>
-      <Routes>
-        <Route path="/" element={<AboutPage />} />
-        <Route path="/playlist-manager" element={<PlaylistManagerPage setAuth={setAuth} auth={auth} />} />
-        <Route path="/login" element={<LoginPage setAuth={setAuth} auth={auth} />} />
-      </Routes>
-    </Router>
-    <input value={auth.token} />
-    <input value={auth.expiresIn} />
-    <input value={auth.isAuthenticated} />
+    <>
+      <input readOnly value={auth.token} />
+      <input readOnly value={auth.expiresIn} />
+      <input readOnly value={auth.isAuthenticated} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<AboutPage />} />
+          <Route path="/playlist-manager" element={<PlaylistManagerPage setAuth={setAuth} auth={auth} />} />
+          <Route path="/login" element={<LoginPage setAuth={setAuth} auth={auth} />} />
+        </Routes>
+      </Router>
     </>
   );
 }

@@ -9,20 +9,15 @@ function PlaylistManagerPage({ auth }) {
     const [ searchTerm, setSearchTerm ] = useState('');
     const [ searchResults, setSearchResults] = useState([]);
 
-    /*
     useEffect(() => {
         const awaitResults = async() => {
-            const results = await SpotifyApi.search(searchTerm, accessObject);
+            const results = await SpotifyApi.search(searchTerm, auth);
             setSearchResults(results);
-            
-            console.log('Search Results below: ');
-            console.log(searchResults);
         }
 
         awaitResults();
         
     }, [ searchTerm ]);
-    */
 
     return (
         <MainTemplate>

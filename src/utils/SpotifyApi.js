@@ -67,12 +67,12 @@ const SpotifyApi = {
         return { accessToken, expiresIn, isAuthenticated };
     },
 
-    async search(q, { accessToken }) {
+    async search(q, { token }) {
 
         if (q.length > 0) {
             const url = `https://api.spotify.com/v1/search?q=${q}&type=track`;
             try {
-                const response = await fetch(url, SpotifyConfig.getReqInit('GET', accessToken));
+                const response = await fetch(url, SpotifyConfig.getReqInit('GET', token));
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
                 }
