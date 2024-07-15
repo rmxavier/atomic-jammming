@@ -1,13 +1,13 @@
 import React from 'react';
-import { Footer, Logo } from '../../components'
+import { FooterA, LogoA } from '../../components'
 import './MainTemplate.css';
 
 export default function MainTemplate({ children }) {
   return (
     <>
-      <Logo />
+      <LogoA />
       { children }
-      <Footer />
+      <FooterA />
     </>
   );
 }

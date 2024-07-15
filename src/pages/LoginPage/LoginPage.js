@@ -25,7 +25,7 @@ function LoginPage({auth, setAuth}) {
 
   return(
     <LoggedOutTemplate>
-      { auth.isAuthenticated ? <Navigate to="/playlist-manager" /> : <></> }
+      { auth.isAuthenticated ? <Navigate to="/playlists/mock-playlist" /> : <></> }
     </LoggedOutTemplate>
   );
 }

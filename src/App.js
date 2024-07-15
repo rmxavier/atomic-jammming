@@ -1,4 +1,4 @@
-import { AboutPage, PlaylistManagerPage, LoginPage } from './pages';
+import { AboutPage, PlaylistPage, LoginPage, PlaylistsPage } from './pages';
 import SpotifyApi from './utils/SpotifyApi';
 import React, { useState, useEffect } from 'react';
 import './App.css';
@@ -21,7 +21,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<AboutPage />} />
-          <Route path="/playlist-manager" element={<PlaylistManagerPage setAuth={setAuth} auth={auth} />} />
+          <Route path="/playlists" element={ <PlaylistsPage />} />
+          <Route path="/playlists/:id" element={<PlaylistPage setAuth={setAuth} auth={auth} />} />
           <Route path="/login" element={<LoginPage setAuth={setAuth} auth={auth} />} />
         </Routes>
       </Router>

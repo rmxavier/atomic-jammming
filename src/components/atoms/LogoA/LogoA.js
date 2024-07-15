@@ -1,5 +1,5 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import "./Logo.css";
+import { useNavigate } from "react-router-dom";
+import "./LogoA.css";
 
 function Logo() {
 

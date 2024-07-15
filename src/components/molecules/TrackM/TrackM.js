@@ -1,5 +1,5 @@
-import React, { act } from "react";
-import './Track.css'
+import React from "react";
+import './TrackM.css'
 
 function Track({ key, index, row, track, addToPlaylist, removeFromPlaylist }) {
   const rowModifier = row === 'even' ? 'track--even' : 'track--odd';

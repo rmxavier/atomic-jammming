@@ -1,12 +1,12 @@
 import React from "react";
-import { Logo, Footer } from "../../components";
+import { LogoA, FooterA } from "../../components";
 
 function LoggedOutTemplate({ children }) {
   return (
     <>
-      <Logo />
+      <LogoA />
       { children }
-      <Footer />
+      <FooterA />
     </>
   );
 }

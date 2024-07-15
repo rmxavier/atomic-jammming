@@ -1,3 +1,4 @@
-export { default as Footer } from './Footer/Footer';
-export { default as Logo } from './Logo/Logo';
-export { default as Palette } from './Palette/Palette';
+export { default as FooterA } from './FooterA/FooterA';
+export { default as LogoA } from './LogoA/LogoA';
+export { default as PaletteA } from './PaletteA/PaletteA';
+export { default as ActionButtonA } from './ActionButtonA/ActionButtonA';

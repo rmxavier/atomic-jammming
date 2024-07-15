@@ -1,3 +1,3 @@
-export { default as Playlist } from './Playlist/Playlist';
-export { default as SearchBar } from './SearchBar/SearchBar';
-export { default as SearchResults } from './SearchResults/SearchResults';
+export { default as PlaylistO } from './PlaylistO/PlaylistO';
+export { default as SearchBarO } from './SearchBarO/SearchBarO';
+export { default as SearchResultsO } from './SearchResultsO/SearchResultsO';

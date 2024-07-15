@@ -1,14 +1,14 @@
 import React from "react";
-import './Playlist.css';
-import { Track } from "../../molecules";
+import './PlaylistO.css';
+import { TrackM } from "../../molecules";
 
-function Playlist({ playlistItems, removeFromPlaylist }) {
+function PlaylistO({ playlistTracks, removeFromPlaylist }) {
   return (
     <>
       {
-        playlistItems.map((item, index) => {
+        playlistTracks.map((item, index) => {
           return (
-            <Track 
+            <TrackM 
               key={ index } 
               index={ index }
               row={ index % 2 === 0 ? 'even' : 'odd'} 
@@ -21,4 +21,4 @@ function Playlist({ playlistItems, removeFromPlaylist }) {
   );
 }
 
-export default Playlist;
+export default PlaylistO;

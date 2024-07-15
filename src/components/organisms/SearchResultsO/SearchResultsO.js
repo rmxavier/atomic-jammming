@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
-import { Track } from "../../molecules";
+import './SearchResultsO.css';
+import { TrackM } from "../../molecules";
 
-function SearchResults({ searchResults, addToPlaylist }) {
+function SearchResults({ searchResultsTracks, addToPlaylist }) {
 
   useEffect(() => {
-    console.log(searchResults);
+    console.log(searchResultsTracks);
   });
 
   return (
     <>
       {
-        searchResults.map((result, index) => {
+        searchResultsTracks.map((result, index) => {
 
           const track = {
             id: result.id,
@@ -20,7 +21,7 @@ function SearchResults({ searchResults, addToPlaylist }) {
           }
 
           return (
-            <Track 
+            <TrackM 
               key={ index } 
               index={ index }
               row={ index % 2 === 0 ? 'even' : 'odd'} 

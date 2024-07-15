@@ -1,4 +1,4 @@
-import "./Palette.css";
+import "./PaletteA.css";
 
 function Palette() {
     return(
