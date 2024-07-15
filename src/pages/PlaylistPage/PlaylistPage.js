@@ -3,12 +3,14 @@ import './PlaylistPage.css';
 import { PlaylistO, SearchBarO, SearchResultsO } from '../../components';
 import { MainTemplate } from '../../templates';
 import SpotifyApi from '../../utils/SpotifyApi';
+import { useParams } from 'react-router-dom';
 
 function PlaylistPage({ auth }) {
 
     const [ searchTerm, setSearchTerm ] = useState('');
     const [ searchResultsTracks, setSearchResultsTracks] = useState([]);
     const [ playlistTracks, setPlaylistTracks ] =useState([{id: '123', imgUrl: 'https://i.scdn.co/image/ab67616d0000485140cbf5330f808105d7ba9a44', title: 'Mock title', artist: 'Mock artist'}]);
+    const { playlistId } = useParams();
 
     const addToPlaylist = (thisTrack) => {
       setPlaylistTracks((prev) => [ ...prev, thisTrack]);
@@ -39,7 +41,7 @@ function PlaylistPage({ auth }) {
                   <SearchResultsO searchResultsTracks={ searchResultsTracks } addToPlaylist={addToPlaylist} />
                 </div>
                 <div className="playlistTracks">
-                  <div className="sectionTitle">Playlist 'Mock playlist title'</div>
+                  <div className="sectionTitle">Playlist '{ playlistId }'</div>
                   <PlaylistO playlistTracks={playlistTracks} removeFromPlaylist={ removeFromPlaylist }/>
                 </div>
             </div>

@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AboutPage />} />
           <Route path="/playlists" element={ <PlaylistsPage />} />
-          <Route path="/playlists/:id" element={<PlaylistPage setAuth={setAuth} auth={auth} />} />
+          <Route path="/playlists/:playlistId" element={<PlaylistPage setAuth={setAuth} auth={auth} />} />
           <Route path="/login" element={<LoginPage setAuth={setAuth} auth={auth} />} />
         </Routes>
       </Router>
